@@ -22,21 +22,30 @@ public class IncrementalHttpResponseExample {
 				InputStream inputStream = connection.getInputStream();
 				JsonFactory jsonFactory = new JsonFactory();
 				JsonParser jsonParser = jsonFactory.createParser(inputStream);
-
+//				try {
+//					System.out.println(jsonParser.);
+//				}catch(Exception e) {
+//					e.printStackTrace();
+//				}
+//				
+				
                 if (jsonParser.nextToken() == JsonToken.START_OBJECT) {
-                    while (jsonParser.nextToken() != JsonToken.END_OBJECT) {
-                    	
-                        if (jsonParser.getCurrentToken() == JsonToken.FIELD_NAME
-                                && "items".equals(jsonParser.getText())) {
-                        	
-                            if (jsonParser.nextToken() == JsonToken.START_ARRAY) {
-                            	
-                                while (jsonParser.nextToken() != JsonToken.END_ARRAY) {
-                                	System.out.println("Sleep");
+                	int i=0;
+                    while (i!=100) {i++;
+//                        if (jsonParser.getCurrentToken() == JsonToken.FIELD_NAME
+//                                && "items".equals(jsonParser.getText())) {
+//                        	
+//                        	
+//                        	
+//                            if (jsonParser.nextToken() == JsonToken.START_ARRAY) {
+//                            	
+//                                while (jsonParser.nextToken() != JsonToken.END_ARRAY) {
+//                                	//System.out.println("Sleep");
+                    				jsonParser.nextToken();
                                 	System.out.println(jsonParser.getText());
-                                }
-                            }
-                        }
+//                                }
+//                            }
+//                        }
                     }
                 }
 
@@ -46,7 +55,7 @@ public class IncrementalHttpResponseExample {
 			} else {
 				System.out.println("HTTP request failed with response code: " + responseCode);
 			}
-		} catch (IOException e) {
+		} catch (Exception  e) {
 			e.printStackTrace();
 		}
 	}
