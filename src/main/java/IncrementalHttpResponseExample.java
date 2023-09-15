@@ -18,6 +18,8 @@ public class IncrementalHttpResponseExample {
 			connection.setRequestMethod("GET");
 
 			int responseCode = connection.getResponseCode();
+			System.out.println(connection.getResponseCode());
+//			if(dataresponse.getStatusLine().getStatusCode()==200) {
 			if (responseCode == HttpURLConnection.HTTP_OK) {
 				InputStream inputStream = connection.getInputStream();
 				JsonFactory jsonFactory = new JsonFactory();

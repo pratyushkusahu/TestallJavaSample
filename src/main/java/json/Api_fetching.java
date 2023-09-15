@@ -42,6 +42,10 @@ public  class Api_fetching {
 				List<String> outputData =null;
 				String collect =null;
 				
+//				FileWriter file = new FileWriter("E:/output.json");
+//				file.write(jsonObject.toJSONString());
+//				file.close();
+				
 				return true;
 			}else {
 				return true;
@@ -62,7 +66,7 @@ public  class Api_fetching {
 	public static void main(String[] args) {
 		System.out.println("getDatafrmAPI");
 		try {
-			getDatafrmAPI("https://news.redboxglobal.in/api/news/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxzbmV3c0ByYXRoaS5jb20iLCJpYXQiOjE2NTExMjc4MzV9.ajCFaQXn5ZBejufwff0QU0tm-XuUx4YnedP8wJEBi2M");
+			getDatafrmAPI("http://localhost:8080/api/v1/employees");
 
 		}catch(Exception e) {
 			System.out.println(e);
